@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   root "pages#index"
 
   get 'openLottery' , to: "pages#openLottery"
+  get "applyLottery", to: "pages#applyLottery"
+  get "closeLottery", to: "pages#closeLottery"
 end

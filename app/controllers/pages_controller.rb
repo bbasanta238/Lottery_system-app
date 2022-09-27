@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
     def applyLottery
     end
+
+    def closeLottery
+    end
 end
