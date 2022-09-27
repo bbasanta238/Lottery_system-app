@@ -1,1 +1,17 @@
 <p>This is open lottery pages</p>
+<div class="col-md-6 offset-md-3">
+    <%= simple_form_for :form, :url => '/' do |f|%>
+        <%= f.input :lottery_Number, :as => :integer, :label => 'Lottery Number' ,class: "form-control"%>
+        <br>
+        <%= f.input :lottery_price, :as => :integer, :label => 'Lottery Price'%>
+        <br>
+        <%= f.input :open_time, as: :datetime, :start_year => Date.today.year, :label => "Lottery Open Time", html5: true %>
+        <br>
+        <%= f.input :close_time, :as => :datetime, :label => 'Lottery Close Time', html5: true %>
+        <br>
+        <div class="d-grid">
+        <%= f.submit 'Submit', class: 'btn btn-primary'%>
+    <% end %>
+</div>
+
+

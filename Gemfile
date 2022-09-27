@@ -75,4 +75,4 @@ group :test do
 end
 
 #simple form
-gem 'simple_form'
+gem "simple_form"
