@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
     def closeLottery
     end
+
+    def participant
+    end
 end
