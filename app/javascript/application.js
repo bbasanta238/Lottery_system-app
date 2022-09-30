@@ -1,7 +1,6 @@
 // Entry point for the build script in your package.json
 // import { Turbo } from "@hotwired/turbo-rails"
 // Turbo.session.drive = false
-
 import "@hotwired/turbo-rails"
 import "./controllers"
 import * as bootstrap from "bootstrap"
@@ -10,8 +9,13 @@ import * as bootstrap from "bootstrap"
 import "./src/jquery"
 import "./src/web3"
 
-// custom js
-import "./customjs/index"
+// custom js for metamask connection
+import "./custom/index"
+
+// custom js for the DOM access
+import "./custom/openLotteryForm"
+
+
 
 
 

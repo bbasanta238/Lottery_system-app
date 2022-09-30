@@ -76,3 +76,5 @@ end
 
 #simple form
 gem "simple_form"
+
+gem "gon", "~> 6.4"
