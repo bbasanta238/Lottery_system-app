@@ -1,7 +1,7 @@
 <turbo-frame id="card-index">
   <div class="col-md-6 offset-md-3 mt-5">
-    <%= simple_form_for :form, :url => '/' do |f|%>
-      <%= f.input :lottery_Number, :as => :integer, :label => 'Lottery Number' ,class: "form-control"%>
+    <%= simple_form_for :form, url: pages_path, id: 'formId', method: :post do |f|%>
+      <%= f.input :lottery_number, :as => :integer, :label => 'Lottery Number' ,class: "form-control"%>
       <br>
       <%= f.input :lottery_price, :as => :integer, :label => 'Lottery Price'%>
       <br>
@@ -10,7 +10,7 @@
       <%= f.input :close_time, :as => :datetime, :label => 'Lottery Close Time', html5: true %>
       <br>
       <div class="d-grid">
-        <%= f.submit 'Submit', class: 'btn btn-primary'%>
+        <%= f.submit 'Submit', class: 'btn btn-primary', id: 'openLotterySubmitBtn'%>
       <% end %>
     </div>
   </div>

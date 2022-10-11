@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get "applyLottery", to: "pages#applyLottery"
   get "closeLottery", to: "pages#closeLottery"
   get "participant", to: "pages#participant"
+
+  resources :pages
 end

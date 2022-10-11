@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
     def index
-        # gon.contractAddress= "0x86215A622796C8d93fff2795f3b43E50d902951C"
     end
 
     def openLottery
@@ -13,5 +12,8 @@ class PagesController < ApplicationController
     end
 
     def participant
+    end
+
+    def create
     end
 end

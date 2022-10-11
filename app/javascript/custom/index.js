@@ -1,6 +1,6 @@
 import Web3 from 'web3';
 // import ABI from './ABI.json'
-import {open} from '../web3/openLottery'
+
 
 let web3 
 let accounts
@@ -17,9 +17,7 @@ $(async function(){
             login()
         }   
         
-        $('#openLotteryId').on("click",()=>{
-            open()
-        })
+       
     }else{
         alert("Please install metamask");   
     }
@@ -27,9 +25,7 @@ $(async function(){
 
 
 $(document).on('turbo:load',function(){
-    // console.log('type of accounts : ', typeof(accounts))
-    login() 
-         
+    login()          
 })
 
 
@@ -58,19 +54,3 @@ const checkSignature = async(message)=>{
 }
 
 export {web3 , accounts}
-
-
-// async function getvalue() {
-//     console.log('GetValue')
-//     // const deployedAddress = process.env.CONTRACT_ADDRESS
-//     const lotteryContract = new web3.eth.Contract(
-//                 ABI,
-//                 "0x86215A622796C8d93fff2795f3b43E50d902951C"
-//     );
-//     lotteryContract.methods.openLottery(1, 2, 100, 105).send({from:accounts[0]})
-//     }
-
-    
-    // contractFirst.methods.getValue().call().then(function (result) {                
-    //     $('#getValue').html(result)
-    // });
