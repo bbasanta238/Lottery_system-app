@@ -2,6 +2,6 @@ class ApplicationController < ActionController::Base
     before_action :setGonData
     
     def setGonData
-        gon.contractAddress= "0x86215A622796C8d93fff2795f3b43E50d902951C"
+        gon.contractAddress= "0xAd346f3129CbD9034480b5319Cf272D06D8b2675"
     end
 end

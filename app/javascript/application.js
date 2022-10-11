@@ -12,8 +12,9 @@ import "./src/web3"
 // custom js for metamask connection
 import "./custom/index"
 
-// custom js for the DOM access
+// custom js for the DOM access 
 import "./custom/openLotteryForm"
+import "./custom/closeLottery"
 
 
 
