@@ -15,6 +15,7 @@ import "./custom/index"
 // custom js for the DOM access 
 import "./custom/openLotteryForm"
 import "./custom/closeLottery"
+import "./custom/applyLottery"
 
 
 

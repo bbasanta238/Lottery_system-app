@@ -9,7 +9,6 @@ async function contractConnection() {
                 ABI,
                 gon.contractAddress
     );
-    // lotteryContract.methods.openLottery(1, 2, 100, 105).send({from:accounts[0]})
 }
 
 export {contractConnection,lotteryContract}

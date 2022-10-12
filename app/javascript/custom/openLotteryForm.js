@@ -18,7 +18,7 @@ $(document).on('turbo:frame-load',function(){
     console.log(values.form_open_time)
     open(values.form_lottery_number,values.form_lottery_price,values.form_open_time,values.form_close_time)
     })
-
+    
 })
 
 
