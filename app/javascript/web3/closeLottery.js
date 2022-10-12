@@ -12,4 +12,22 @@ async function participants(){
     console.log('here', await lotteryContract.methods.getLotteryParticipants().call())
 }
 
-export {currentLotteryInfo,participants}
+// function to select winner
+async function selectLotteryWinner(_invokedTime){
+    await contractConnection()
+    await lotteryContract.methods.selectWinner(_invokedTime).send({from: accounts[0]})
+}
+
+// function to close lottery
+async function closeCurrentLottery(_invokedTime){
+    await contractConnection()
+    await lotteryContract.methods.closeLottery(_invokedTime).send({from:accounts[0]})
+}
+
+// get lottery owner Address
+async function lotteryOwner(){
+    await contractConnection()
+    console.log("the lottery owner : ", await lotteryContract.methods.owner().call())
+}
+
+export {currentLotteryInfo,participants,selectLotteryWinner,closeCurrentLottery,lotteryOwner}
