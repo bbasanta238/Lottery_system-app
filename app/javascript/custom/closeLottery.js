@@ -10,10 +10,13 @@ $(document).on('turbo:frame-load',async function(){
     $('#lotteryPrice').html(lotteryInfo[0])
     $('#openTime').html(convertDate(lotteryInfo[1]))
     $('#closeTime').html(convertDate(lotteryInfo[2]))
-    $('#isOpen').html(changeBoolean(lotteryInfo[3]))
     $('#isWinnerSelected').html(changeBoolean(lotteryInfo[4]))
 
-
+    if(lotteryInfo[2]>((Date.now())/1000)){
+        $('#isOpen').html("Yes")
+    }else{
+        $('#isOpen').html("No")
+    }
     // elements of participant
     //  await participants() 
     // console.log("the participants",participantInfo)
@@ -21,13 +24,25 @@ $(document).on('turbo:frame-load',async function(){
     /**
      * button of select winner
      */
-    console.log("date",parseInt(Date.now()/1000))
-    if(lotteryInfo[2]<(parseInt((Date.now())/1000))){
+    
+    if(lotteryInfo[2]<(parseInt((Date.now())/1000)) && (lotteryInfo[4]== false)){
         $('#selectWinnerBtn').removeClass('d-none')
     }
 
     $('#selectWinnerBtn').on('click',async ()=>{
-        console.log(await selectLotteryWinner(parseInt((Date.now())/1000)))
+        $("#closeCard").addClass('d-none')
+        $("#spinner").removeClass('d-none')
+        let res = await selectLotteryWinner(parseInt((Date.now())/1000))
+        if(res){
+            console.log("res",res)
+            console.log("res[0]",res[0])
+            console.log("res[0].returnValues",res[0].returnValues)
+            $("#spinner").addClass('d-none')
+            $("#closeCard").removeClass('d-none')
+            $('#selectWinnerBtn').removeClass('d-none')
+            $('#closeLotteryBtn').removeClass('d-none')
+            alert("Winner " + res[0].returnValues._winnerAddress)
+        }
     })
 
     /**

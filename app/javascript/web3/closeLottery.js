@@ -16,6 +16,11 @@ async function participants(){
 async function selectLotteryWinner(_invokedTime){
     await contractConnection()
     await lotteryContract.methods.selectWinner(_invokedTime).send({from: accounts[0]})
+    const winnerResults = await lotteryContract.getPastEvents('transferredToWinner',{});
+    console.log("here are events of winner lottery :", winnerResults.events)
+    // const managerResults= await lotteryContract.getPastEvents('transferredToManager',{});
+    // console.log("here are events of winner lottery :", managerResults)
+    return(winnerResults)
 }
 
 // function to close lottery

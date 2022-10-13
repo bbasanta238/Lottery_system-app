@@ -12,18 +12,6 @@
         "internalType": "uint256",
         "name": "_appliedTime",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_lotteryPrice",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "_lotteryNumber",
-        "type": "uint256"
       }
     ],
     "name": "lotteryApplyEvent",

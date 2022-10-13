@@ -1,17 +1,30 @@
 <turbo-frame id="card-index">
-  <div class="col-md-6 offset-md-3 mt-5">
-    <%= simple_form_for :form, url: pages_path, id: 'formId', method: :post do |f|%>
-      <%= f.input :lottery_number, :as => :integer, :label => 'Lottery Number' ,class: "form-control"%>
-      <br>
-      <%= f.input :lottery_price, :as => :integer, :label => 'Lottery Price'%>
-      <br>
-      <%= f.input :open_time, as: :datetime, :start_year => Date.today.year, :label => "Lottery Open Time", html5: true %>
-      <br>
-      <%= f.input :close_time, :as => :datetime, :label => 'Lottery Close Time', html5: true %>
-      <br>
-      <div class="d-grid">
-        <%= f.submit 'Submit', class: 'btn btn-primary', id: 'openLotterySubmitBtn'%>
-      <% end %>
+  <div id="openLotteryContainer">
+    <div class="col-md-6 offset-md-3 mt-5">
+      <%= simple_form_for :form, url: pages_path, id: 'formId', method: :post do |f|%>
+        <%= f.input :lottery_number, :as => :integer, :label => 'Lottery Number' ,class: "form-control"%>
+        <br>
+        <%= f.input :lottery_price, :as => :integer, :label => 'Lottery Price'%>
+        <br>
+        <%= f.input :open_time, as: :datetime, :start_year => Date.today.year, :label => "Lottery Open Time", html5: true %>
+        <br>
+        <%= f.input :close_time, :as => :datetime, :label => 'Lottery Close Time', html5: true %>
+        <br>
+        <div class="d-grid">
+          <%= f.submit 'Submit', class: 'btn btn-primary', id: 'openLotterySubmitBtn'%>
+        <% end %>
+      </div>
     </div>
+  </div>
+  <%# spinner %>
+  <div class="d-flex  align-items-center justify-content-center d-none" style="height: 85vh" id="spinner">
+    <button class="btn btn-danger" type="button" disabled>
+      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+      <span class="visually-hidden">Loading...</span>
+    </button>
+    <button class="btn btn-danger ms-2" type="button" disabled>
+      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+      Please Wait, Processing !! 
+    </button>
   </div>
 </turbo-frame>

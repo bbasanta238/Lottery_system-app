@@ -1,4 +1,4 @@
-<div class="card mt-5">
+<div class="card mt-5" id="applyContainer">
   <div class="card-header">
     Current Lottery 
   </div>
@@ -16,6 +16,17 @@
       <small class="text-muted" id="closeTime"></small>
     </h3>
     <br>
-    <a href="#" class="btn btn-primary d-none" id="applyLotteryButton">Apply</a>
+    <a href="#" class="btn btn-primary d-none disabled" id="applyLotteryButton">Apply</a>
   </div>
+</div>
+<%# spinner %>
+<div class="d-flex  align-items-center justify-content-center d-none" style="height: 85vh" id="spinner">
+  <button class="btn btn-danger" type="button" disabled>
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+    <span class="visually-hidden">Loading...</span>
+  </button>
+  <button class="btn btn-danger ms-2" type="button" disabled>
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+    Please Wait, Processing !! 
+  </button>
 </div>
