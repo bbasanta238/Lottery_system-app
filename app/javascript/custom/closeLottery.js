@@ -20,7 +20,7 @@ $(document).on('turbo:frame-load',async function(){
 
     // elements of participant
     $("#showParticipant").on("click",async ()=>{
-        console.log("clicked show participant")
+        // console.log("clicked show participant")
         let lotteryParticipant = await participants()
         console.log("this is",lotteryParticipant)
         var table_body = '<table border="1">';
@@ -59,9 +59,6 @@ $(document).on('turbo:frame-load',async function(){
         $("#spinner").removeClass('d-none')
         let res = await selectLotteryWinner(parseInt((Date.now())/1000))
         if(res){
-            console.log("res",res)
-            console.log("res[0]",res[0])
-            console.log("res[0].returnValues",res[0].returnValues)
             $("#spinner").addClass('d-none')
             $("#closeCard").removeClass('d-none')
             $('#selectWinnerBtn').removeClass('d-none')

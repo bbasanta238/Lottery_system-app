@@ -48,7 +48,7 @@ const login = ()=>{
 
 // function to check signature
 const checkSignature = async(message)=>{
-    console.log("localstorage from",window.localStorage.getItem('signature'))
+    // console.log("localstorage from",window.localStorage.getItem('signature'))
     if((localStorage.getItem('signature'))=='true')
     {
         return true

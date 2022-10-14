@@ -15,7 +15,7 @@ $(document).on('turbo:frame-load',function(){
     
     values.form_open_time = Date.parse(values.form_open_time)/1000
     values.form_close_time = Date.parse(values.form_close_time)/1000
-    console.log(values.form_open_time)
+    // console.log(values.form_open_time)
     $("#openLotteryContainer").addClass("d-none")
     $("#spinner").removeClass("d-none")
     let event =  await open(values.form_lottery_number,values.form_lottery_price,values.form_open_time,values.form_close_time)

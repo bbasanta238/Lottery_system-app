@@ -3,7 +3,6 @@ import {web3} from './custom/index'
 let lotteryContract
 
 async function contractConnection() {
-    console.log('GetValue')
     // const deployedAddress = process.env.CONTRACT_ADDRESS
     lotteryContract = new web3.eth.Contract(
                 ABI,
