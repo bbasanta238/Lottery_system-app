@@ -9,7 +9,7 @@ async function currentLotteryInfo(_lotteryNumber){
 // function to get particpants info
 async function participants(){
     await contractConnection()
-    let participant= await lotteryContract.methods.getLotteryParticipants().call({from:accounts[0]})
+    let participant= await lotteryContract.methods.getLotteryParticipants().call()
     return participant
 }
 
