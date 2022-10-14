@@ -17,7 +17,32 @@ $(document).on('turbo:frame-load',async function(){
     }else{
         $('#isOpen').html("No")
     }
+
     // elements of participant
+    $("#showParticipant").on("click",async ()=>{
+        console.log("clicked show participant")
+        let lotteryParticipant = await participants()
+        console.log("this is",lotteryParticipant)
+        var table_body = '<table border="1">';
+              for(var i=0;i<lotteryParticipant.length;i++){
+                table_body+='<tr>';
+
+                // S.NO.
+                    table_body +='<td>';
+                    table_body += i+1;
+                    table_body +='</td>';
+
+                //address 
+                    table_body +='<td>';
+                    table_body += lotteryParticipant[i];
+                    table_body +='</td>';
+                
+                table_body+='</tr>';
+              }
+                table_body+='</table>';
+               $('#tableDiv').html(table_body);
+     
+    })
     //  await participants() 
     // console.log("the participants",participantInfo)
 

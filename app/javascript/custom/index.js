@@ -7,20 +7,27 @@ let accounts
 
 
 $(async function(){
-    if (typeof window.ethereum !== 'undefined') {
+    async function checkProvider(){
+        if (typeof window.ethereum !== 'undefined') {
        
-        web3= new Web3(await Web3.givenProvider)
-        accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        message = `Your want to Login in this website via account ${accounts[0]}`
-
-        if (await checkSignature(message)){
-            login()
-        }   
-        
-       
-    }else{
-        alert("Please install metamask");   
+            web3= new Web3(await Web3.givenProvider)
+            accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            message = `Your want to Login in this website via account ${accounts[0]}`
+    
+            if (await checkSignature(message)){
+                login()
+            }   
+            
+           
+        }else{
+            alert("Please install metamask");   
+        }
     }
+    checkProvider()
+    window.ethereum.on('accountsChanged',()=>{
+        checkProvider()
+    })
+    
 })
 
 

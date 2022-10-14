@@ -8,8 +8,11 @@ async function currentLotteryInfo(_lotteryNumber){
 }
 // function to get particpants info
 async function participants(){
+    console.log("it is called")
     await contractConnection()
-    console.log('here', await lotteryContract.methods.getLotteryParticipants().call())
+    let participant= await lotteryContract.methods.getLotteryParticipants().call({from:accounts[0]})
+    console.log("participant from web3",participant.return_value)
+    return participant
 }
 
 // function to select winner
