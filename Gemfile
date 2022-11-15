@@ -78,3 +78,6 @@ end
 gem "simple_form"
 
 gem "gon", "~> 6.4"
+
+gem 'devise'
+
