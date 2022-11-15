@@ -2,9 +2,9 @@
   <div id="openLotteryContainer">
     <div class="col-md-6 offset-md-3 mt-5">
       <%= simple_form_for :form, url: pages_path, id: 'formId', method: :post do |f|%>
-        <%= f.input :lottery_number, :as => :integer, :label => 'Lottery Number' ,class: "form-control"%>
+        <%= f.input :lottery_number, :as => :hidden,class: "form-control" ,input_html:{value: 1}%>
         <br>
-        <%= f.input :lottery_price, :as => :integer, :label => 'Lottery Price'%>
+        <%= f.input :lottery_price, :as => :integer, :label => 'Lottery Price',:placeholder=> '0.0 ETH'%>
         <br>
         <%= f.input :open_time, as: :datetime, :start_year => Date.today.year, :label => "Lottery Open Time", html5: true %>
         <br>
